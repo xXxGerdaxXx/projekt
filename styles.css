@@ -1417,19 +1417,49 @@ footer {
 .contact-boxes-tablet {
     display: none;
 }
-.contact-box h3 {
-    margin-top: 20px;
-    font-size: 1.1rem;
+.contact-boxes {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Space between the boxes */
+    margin-top: 2rem;
+}
+
+.contact-box {
+    background-color: transparent;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid rgba(233, 218, 218, 0.5); /* 20% opacity for the border */
+    border-radius: 8px; /* Rounded corners */
+    width: 196px; /* Adjust the size of each contact box */
+    height: 166px;
+    text-align: left;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease;
+}
+
+.contact-box:hover {
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.contact-icon {
+    font-size: 1.5rem; /* Make the icon larger */
+    color: #6366F1; /* Customize the icon color */
+    margin-bottom: 0.1rem; /* Space between icon and text */
+}
+
+.contact-box p {
+    text-align: left;
+    font-size: 14px !important;
     color: #333;
+   
 }
 
 .contact-box a {
-    display: inline-block;
-    margin-top: 15px;
+    font-size: 14px !important;
     font-size: 1rem;
-    color: #5956E9;
-    text-decoration: none;
-    font-weight: 500;
+    color: #50e464; /* Link color */
+    text-decoration: none !important;
 }
 
 .contact-box a:hover {
@@ -1438,10 +1468,8 @@ footer {
 
 
 
-/* Color adjustments for the second box */
-.contact-box:nth-child(2) .icon-container svg {
-    stroke: #5BBF95;
-}
+
+
 .contact-boxes {
     display: none;
 }
@@ -1514,7 +1542,7 @@ footer {
     }
 
     /* Hide unnecessary brands */
-    #brand-5, #brand-6 {
+    #brand-5, #brand-6{
         display: none;
     }
 
@@ -1528,7 +1556,7 @@ footer {
         width: 100%;
         padding: 0;
     }
-
+    
     .hero .container {
         display: grid;
         grid-template-columns: 1fr 1fr; /* Two equal columns for text and image */
@@ -1637,6 +1665,7 @@ footer {
     .contact-btn-container {
         display: none;
     }
+   
 
     /* Contact Boxes (Tablet) */
     .contact-boxes-tablet {
@@ -1647,7 +1676,7 @@ footer {
         gap: 20px;
         width: 100%;
     }
-    .contact-box img {
+    .contact-box-tablet img {
         margin-left: 0.3rem;
         margin-right: 0.3rem;
     }
@@ -2187,58 +2216,224 @@ footer {
 
 
 /* Online Consultation Form */
-.contact-us {
+.header-index2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: #F3F6FF;
+    max-width: 1320px; /* Ensure consistency between the header and breadcrumbs */
+    margin: 0 auto; /* Center the container */
+}
+
+
+#logo-index2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    color: #0B0F19;
+    font-size: 20px;
+}
+
+.navbar-index2 {
+    display: flex;
+    gap: 2rem; /* Adds space between the navigation links */
+}
+
+.nav-link-index2 {
+    color: #0B0F19;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-link-index2:hover {
+    color: #4B58F5;
+    text-decoration: underline;
+}
+
+.btn-toggle-switch-index2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Adds space between Dark Mode label and switch */
+}
+
+#auth-signin-index2 {
+    display: flex;
+    align-items: center;
+    background-color: #4B58F5;
+    color: #FFFFFF;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    white-space: nowrap; /* Prevents the button text from wrapping */
+}
+
+#auth-signin-index2:hover {
+    background-color: #6366F1;
+}
+
+/* Toggle switch styles */
+.toggle-switch-index2 {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+}
+
+.toggle-switch-index2 input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch-index2 input:checked + .slider {
+    background-color: #4B58F5;
+}
+
+.toggle-switch-index2 input:focus + .slider {
+    box-shadow: 0 0 1px #4B58F5;
+}
+
+.toggle-switch-index2 input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+.toggle-switch-index2 .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9397AD;
+    transition: 0.2s;
+}
+
+.toggle-switch-index2 .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2.5px;
+    background-color: white;
+    transition: 0.2s;
+}
+
+.toggle-switch-index2 .slider.round {
+    border-radius: 35px;
+}
+
+.toggle-switch-index2 .slider.round:before {
+    border-radius: 50%;
+}
+.wrapper-index2 {
+    width: 100%;
+    background-color: #F3F6FF; /* To match header background */
+}
+
+
+.contact-us-index2 {
+    width: 100%;
     max-width: 1320px;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two equal columns for contact details and form */
     gap: 3rem;
     background-color: #F3F6FF;
-    padding: 2rem;
-    margin-bottom: 2rem; /* Space between sections */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0 auto; /* Centers the section */
 }
 
+.contact-us-index2 h1 {
+    font-size: 40px;
+}
 
-.contact-details {
+/* Full-width background for the contact section */
+.full-width-wrapper-index2 {
+    background-color: #F3F6FF; /* Stretching background color */
+    width: 100vw; /* Full viewport width */
+    padding-bottom: 2rem;
+    margin: 0;
+    
+}
+
+/* Full-width background for breadcrumb wrapper */
+.breadcrumb-wrapper-index2 {
+    background-color: #F3F6FF;
+    width: 100vw; /* Full width */
+    padding: 0; /* Ensure no padding here */
+}
+
+.container-index2 {
+    max-width: 1320px;
+    margin: 0 auto; /* Center the container */
+    padding: 0 1rem;
+    
+}
+
+.breadcrumb-index2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 0;
+    gap: 0.5rem;
+}
+.container-index2 {
+    display: flex;
+}
+.contact-details-index2 {
     display: flex;
     flex-direction: column;
     gap: 2rem; /* Space between each contact item */
 }
 
-.contact-item {
+.contact-item-index2 {
     display: flex;
     align-items: start;
     gap: 1.5rem; /* Space between icon and text */
 }
 
-.contact-icon img {
+.contact-icon-index2 img {
     width: 40px;
     height: 40px;
 }
 
-.contact-text h3 {
+.contact-text-index2 h3 {
     margin: 0;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 900;
 }
 
-.contact-text p {
+.contact-text-index2 p {
     margin: 0.5rem 0;
     font-size: 16px;
     color: #666;
+    max-width: 300px;
 }
 
-.contact-text a {
+.contact-text-index2 a {
     color: #4B58F5; /* Adjust to your theme's color */
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
 }
 
-.contact-text a:hover {
+.contact-text-index2 a:hover {
     text-decoration: underline;
 }
 
-.consultation-form {
+.consultation-form-index2 {
+    position: absolute;
+    top: 50px; /* Adjust as needed to control vertical position */
+    right: 20px; /* Adjust as needed to control horizontal position */
+    z-index: 10; /* Ensure the form is layered above other elements */
+    width: 520px; /* Control the width of the form */
+    height: 600px;
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
@@ -2246,20 +2441,25 @@ footer {
     max-width: 100%; /* Ensure form takes full width on smaller screens */
 }
 
-.consultation-form h2 {
+/* Ensure the parent container has relative positioning */
+.contact-us-index2 {
+    position: relative;
+}
+
+.consultation-form-index2 h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.consultation-form label {
+.consultation-form-index2 label {
     display: block;
     margin-bottom: 10px;
     font-size: 14px;
     color: #666;
 }
 
-.consultation-form input,
-.consultation-form select {
+.consultation-form-index2 input,
+.consultation-form-index2 select {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -2267,53 +2467,96 @@ footer {
     border-radius: 5px;
 }
 
-.consultation-form .btn-primary {
+.consultation-form-index2 .btn-primary-index2 {
     width: 100%;
     text-align: center;
     padding: 10px;
     background-color: #4B58F5;
     color: white;
+    margin-top: 4rem;
     border: none;
     border-radius: 5px;
 }
-.map {
+
+.map-index2 {
     margin-top: 3rem;
     flex: 1; /* Ensure the map takes up half the space */
 }
 
-.medical-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.map-section-index2 {
+    margin-top: 11rem;
 }
 
-.medical-center p {
+.medical-center-index2 {
+    margin-top: 1rem;
+    flex: 1;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.medical-center-index2 p {
+    padding: 0.3rem;
+    font-size: 16px;
     display: flex;
     align-items: center;
     gap: 1.5rem; /* Space between icon and text */
-    margin-bottom: 1rem;
 }
 
-
-.medical-center img {
+.medical-center-index2 img {
     width: 20px; /* Set an appropriate width for the icon */
     height: auto; /* Maintain aspect ratio */
 }
-.social-icons {
-    display: flex;  /* Arrange the icons in a row */
-    gap: 10px;  /* Space between the icons */
-    justify-content: left;  /* Center the icons horizontally */
-    margin-top: 15px;  /* Add space above the icons */
-}
 
-.social-icons img {
+.social-icons-index2 {
+    padding-left: 1.5rem;
+    display: flex; /* Arrange the icons in a row */
+    gap: 10px; /* Space between the icons */
+    justify-content: left; /* Align the icons horizontally */
     margin-top: 3rem;
-    width: 40px;  /* Set a fixed width for the icons */
-    height: auto;  /* Keep the aspect ratio */
-    transition: transform 0.3s ease;  /* Animation for hover effect */
 }
 
-.social-icons img:hover {
-    transform: scale(1.1);  /* Slightly enlarge the icon on hover */
+.social-icons-index2 img {
+    width: 40px; /* Set a fixed width for the icons */
+    height: auto; /* Keep the aspect ratio */
+    transition: transform 0.3s ease; /* Animation for hover effect */
 }
+
+.social-icons-index2 img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.social-icons-index2 img {
+    background-color: #EFF2FC;
+    padding: 10px; /* Space between the logo and the border */
+    border-radius: 8px; /* Rounded corners for the box */
+    transition: transform 0.3s ease; /* Animation for hover effect */
+}
+
+.social-icons-index2 img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+
+
+.footer-section-index2 {
+    width: 100%;
+    margin-top: 2rem; /* Adds spacing before the footer */
+}
+
+/* Styles for the footer in index2.html */
+.footer-index2 {
+    text-align: center; /* Center the text */
+    padding: 1.5rem 0; /* Padding for space around the text */
+    width: 100%; /* Footer spans full width */
+    margin-top: 15rem; /* Ensure it appears at the bottom when content is short */
+}
+
+/* Footer text styles */
+.footer-index2 p {
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+
+

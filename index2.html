@@ -1,105 +1,114 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="http://kit.fontawesome.com/a576612222.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/styles.css">
-<title>Silicon</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://kit.fontawesome.com/a576612222.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Silicon</title>
 </head>
 <body>
-<div class="wrapper">
-    <header>
-        <div class="container">
-            <a id="logo" href="index.html"><img src="images/logo.svg" alt="Silicon Logotype"></a>
-
-            <nav id="main-menu" class="navbar">
-                <a class="nav-link" href="#">Features</a>
+    <div class="wrapper-index2">
+        <header class="header-index2">
+            <div id="logo-index2">
+                <img src="images/logo.svg" alt="Silicon Logotype">
+                <span class="logo-title-index2">Silicon</span> <!-- Title next to logo -->
+            </div>
+            
+            <nav id="main-menu-index2" class="navbar-index2">
+                <a class="nav-link-index2" href="#">Features</a>
+                <a class="nav-link-index2" href="#">Contact</a> <!-- Add Contact link -->
             </nav>
-
-            <div id="darkmode-toggle-switch" class="btn-toggle-switch">
-                <span class="label">Dark mode</span>
-                <label for="darkmode-switch" class="toggle-switch">
-                    <input id="darkmode-switch" type="checkbox">
+        
+            <div id="darkmode-toggle-switch-index2" class="btn-toggle-switch-index2">
+                <span class="label-index2">Dark Mode</span> <!-- Capitalized "Mode" to match the image -->
+                <label for="darkmode-switch-index2" class="toggle-switch-index2">
+                    <input id="darkmode-switch-index2" type="checkbox">
                     <span class="slider round"></span>
                 </label>
             </div>
-
-            <a id="auth-signin" href="#" class="btn-primary">
+        
+            <a id="auth-signin-index2" href="#" class="btn-primary-index2">
                 <i class="fa-thin fa-user-large"></i>
                 <span>Sign in / up</span>
             </a>
-
-            <button class="btn-mobile">
-                <i class="fa-regular fa-bars"></i>
-            </button>
-
-        </div>
-    </header>
-    <nav class="breadcrumb">
-        <a href="index.html">Homepage</a> 
-        <span>&gt;</span>
-        <a href="#" class="current">Contact</a>
-    </nav>
+        </header>
+    </div>
     
-    <main>
-        <!-- Contact Us Section -->
-        <section class="contact-us">
-            <div class="contact-details">
-                <h1>Contact us</h1>
-                <!-- Contact Item 1: Email Us -->
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <img src="images/email.svg" alt="Email Icon">
-                    </div>
-                    <div class="contact-text">
-                        <h3>Email us</h3>
-                        <p>Please feel free to drop us a line. We will respond as soon as possible.</p>
-                        <a href="#">Leave a message &rarr;</a>
-                    </div>
-                </div>
-                
-                <!-- Contact Item 2: Careers -->
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <img src="images/career.svg" alt="Careers Icon">
-                    </div>
-                    <div class="contact-text">
-                        <h3>Careers</h3>
-                        <p>Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</p>
-                        <a href="#">Send an application &rarr;</a>
-                    </div>
-                </div>
+        <div class="breadcrumb-wrapper-index2">
+            <div class="container-index2">
+                <nav class="breadcrumb-index2">
+                    <img src="images/bx-home-alt.svg" alt="Homepage icon">
+                    <a href="index.html">Homepage</a>
+                   
+                    <img src="images/bread.svg">
+                    <a href="#" class="current-index2">Contact</a>
+                </nav>
             </div>
-            
-            <!-- Consultation Form Section -->
-            <div class="consultation-form">
-                <h2>Get Online Consultation</h2>
-                <form action="#">
-                    <label for="fullname">Full name</label>
-                    <input type="text" id="fullname" name="fullname" placeholder="Your full name">
-                    
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" name="email" placeholder="Your email address">
-                    
-                    <label for="specialist">Specialist</label>
-                    <select id="specialist" name="specialist">
-                        <option value="doctor1">Doctor 1</option>
-                        <option value="doctor2">Doctor 2</option>
-                    </select>
-                    
-                    <button type="submit" class="btn-primary">Make an appointment</button>
-                </form>
+        </div>
+        
+        
+        <main>
+            <section class="full-width-wrapper-index2">
+                <div class="contact-us-index2">
+                    <div class="contact-details-index2">
+                        <h1>Contact us</h1>
+    
+                        <!-- Contact Item 1: Email Us -->
+                        <div class="contact-item-index2">
+                            <div class="contact-icon-index2">
+                                <img src="images/email.svg" alt="Email Icon">
+                            </div>
+                            <div class="contact-text-index2">
+                                <h3>Email us</h3>
+                                <p>Please feel free to drop us a line. We will respond as soon as possible.</p>
+                                <a href="#">Leave a message <img src="images/Vector.svg" alt="Arrow"></a>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Item 2: Careers -->
+                        <div class="contact-item-index2">
+                            <div class="contact-icon-index2">
+                                <img src="images/career.svg" alt="Careers Icon">
+                            </div>
+                            <div class="contact-text-index2">
+                                <h3>Careers</h3>
+                                <p>Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</p>
+                                <a href="#">Send an application <img src="images/Vector.svg" alt="Arrow"></a>
+                            </div>
+                        </div>
+                    </div>
+    
+                <!-- Consultation Form Section -->
+                <div class="consultation-form-index2">
+                    <h2>Get Online Consultation</h2>
+                    <form action="#">
+                        <label for="fullname-index2">Full name</label>
+                        <input type="text" id="fullname-index2" name="fullname" placeholder="Your full name">
+                        
+                        <label for="email-index2">Email address</label>
+                        <input type="email" id="email-index2" name="email" placeholder="Your email address">
+                        
+                        <label for="specialist-index2">Specialist</label>
+                        <select id="specialist-index2" name="specialist">
+                            <option value="doctor1">Doctor 1</option>
+                            <option value="doctor2">Doctor 2</option>
+                        </select>
+                        
+                        <button type="submit" class="btn-primary-index2">Make an appointment</button>
+                    </form>
+                </div>
             </div>
         </section>
-        
-    </main>
-    
+
         <!-- Map and Medical Centers Section -->
-        <section class="map-section">
-            <div class="container">
-                <div class="map">
+        <section class="map-section-index2">
+            <div class="container-index2">
+                <div class="map-index2">
                     <img src="images/maps.svg" alt="Map">
                 </div>
-                <div class="medical-centers">
-                    <div class="medical-center">
+                <div class="medical-centers-index2">
+                    <div class="medical-center-index2">
                         <h3>Medical Center 1</h3>
                         <p>
                             <img src="images/bx-map.svg" alt="Location icon">
@@ -116,26 +125,40 @@
                         </p>
                     </div>
                     
-                    <div class="medical-center">
+                    <div class="medical-center-index2">
                         <h3>Medical Center 2</h3>
-                        <p><img src="/images/bx-map.svg"> 2164 Royal Ln Mesa, New Jersey 45463</p>
-                        <p><img src="/images/bx-phone-call.svg"> Phone: (646) 555-0133</p>
-                        <p><img src="/images/bx-time-five.svg"> Mon - Fri: 9:00 am - 22:00 pm<br> Sat - Sun: 9:00 am - 20:00 pm</p>
+                        <p>
+                            <img src="/images/bx-map.svg" alt="Location icon"> 2164 Royal Ln Mesa, New Jersey 45463
+                        </p>
+                        <p>
+                            <img src="/images/bx-phone-call.svg" alt="Phone icon"> Phone: (646) 555-0133
+                        </p>
+                        <p>
+                            <img src="/images/bx-time-five.svg" alt="Clock icon"> Mon - Fri: 9:00 am - 22:00 pm<br> Sat - Sun: 9:00 am - 20:00 pm
+                        </p>
                         
                         <!-- Social media icons container -->
-                        <div class="social-icons">
+                        <div class="social-icons-index2">
                             <img src="/images/facebook.svg" alt="Facebook">
                             <img src="/images/twitter.svg" alt="Twitter">
                             <img src="/images/instagram.svg" alt="Instagram">
                             <img src="/images/youtube.svg" alt="YouTube">
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2024 Silicon. All rights reserved. CreditMadrasThemes</p>
-        </div>
-    </footer>
+    <!-- Footer Section -->
+    <section class="footer-section-index2">
+        <footer class="footer-index2">
+            <div class="container-index2">
+                <p>© 2024 Silicon. All rights reserved. CreditMadrasThemes</p>
+            </div>
+        </footer>
+    </section>
+</div>
 
 </body>
 </html>
