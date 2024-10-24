@@ -120,39 +120,6 @@ body.dark-mode #email {
     background-color: transparent;
  
 }
-/* Dark mode button */
-body.dark-mode .more-button {
-    background-color:rgba(255, 255, 255, 0.2);;  /* Dark background */
-    color: #fff;  /* White icon color */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);  /* Stronger shadow for depth */
-}
-
-body.dark-mode .more-button.active {
-    background-color: #6366f1;  /* Blue color when active */
-    color: white;
-}
-
-body.dark-mode .more-button.active i {
-    transform: rotate(180deg);  /* Rotate the icon */
-    color: white;  /* Make the icon white */
-}
-
-/* Hover effect in dark mode */
-body.dark-mode .more-button:hover {
-    background-color: #383838;  /* Slightly lighter dark background on hover */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);  /* Stronger shadow on hover */
-}
-
-body.dark-mode .more-button.active:hover {
-    background-color: #4f46e5;  /* Darker blue on hover */
-    color: white;
-}
-
-/* Icon in dark mode */
-body.dark-mode .more-button i {
-    color: #fff;  /* White chevron icon by default */
-}
-
 
 
 
@@ -217,29 +184,21 @@ a:hover {
     border: none;
     font-size: 2rem;
 }  
-body.dark-mode .btn-toggle-switch .label {
-    color: #565973;
-    font-size: 16px;
-    font-weight: 600;
-}
 #logo {
     display: flex;
     align-items: center; /* Ensures logo and title are aligned vertically */
     text-decoration: none;
   }
   
-#logo img {
+  #logo img {
     margin-right: 10px; /* Space between logo image and title */
   }
-  body.dark-mode .btn-mobile {
-    color: #ffff;
-}
-.logo-title {
+  
+  .logo-title {
     font-weight: 900;
-    font-size: 18px; /* Adjust the font size for the title */
+    font-size: 24px; /* Adjust the font size for the title */
     color: #000; /* Change the color of the title */
   }
-
   body.dark-mode .logo-title {
     color: #fff; /* Change to white or another color in dark mode */
   }
@@ -251,7 +210,7 @@ body.dark-mode .btn-toggle-switch .label {
 } 
 
 .btn-toggle-switch .label {
-display: none ;
+display: none;
 }
 
 
@@ -314,7 +273,6 @@ body.dark-mode .nav-link {
 .nav-link {
     color: var(--color-dark);
     font-weight: 600;
-    font-size: 16px;
     text-decoration: none;
 }
 .nav-link:hover {
@@ -326,7 +284,9 @@ body.dark-mode .nav-link {
     color: var(--color-primary);
     text-decoration: underline;
 }
-
+.btn-toggle-switch .label {
+  display: flex;
+}
  #auth-signin {
     display: none;
 }
@@ -348,10 +308,7 @@ header .container {
 
 
 
-body.dark-mode header {
-    background-color: #0D1023;
-    
-}
+
 .hero-heading-tablet{
 display: none;
 }
@@ -365,7 +322,7 @@ display: none;
 
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 30px 0;
+    padding: 60px 0;
 }
 body.dark-mode .hero {
     background: linear-gradient(180deg, #0D1023 0%, #1E273B 100%); /* Gradient blending */
@@ -465,7 +422,7 @@ body.dark-mode .hero {
   
   
   .discover-button {
-    margin-top: 2rem;
+    margin-top: 10rem;
     display: flex;
     background-color: transparent;
     border: none;
@@ -845,56 +802,61 @@ body.dark-mode .testimonials h1 {
 
 .more-button {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 50%; 
+    width: 44px; 
+    height: 44px; 
     font-size: 14px;
-    background-color: #F3F6FF;
-    color: #666666;  /* Default icon color */
+    background-color: var(--color-primary-lightestestgrey);
+    color: var(--color-primary-lightestestgrey);
     cursor: pointer;
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.more-button i {
-    font-size: 16px;  /* Keep icon size consistent */
-    transition: transform 0.3s ease, color 0.3s ease;  /* Smooth rotation and color transition */
-    color: #666666;  /* Default chevron color (matches the grey) */
-}
-
-
-/* Rotate the chevron when active */
-.more-button.active i {
-    transform: rotate(180deg);  /* Rotate the chevron 180 degrees */
-    color: white;  /* Turn chevron white when active */
-    
-}
-
-/* Button background color change */
-.more-button.active {
-    background-color: #6366F1;  /* Blue background when active */
-    color: white;  /* Ensure button text and icon are white when active */
-    text-decoration: none;   
+    padding: 0; 
+    margin: 0; 
     border: none; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease; 
+}
+
+.more-button.active {
+    padding: 0; 
+    margin: 0;  
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    transform: rotate(180deg);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.more-button img {
     
+    background-color: transparent;
+    width: 12px; 
+    height: 12px; 
+    transition: transform 0.3s ease; 
+    transform-origin: center; 
+}
+.more-button.active img {
+transform: rotate(180deg); 
 }
 
-/* Button hover effect */
 .more-button:hover {
-    background-color: #f0f0f0;
-    color: #333333;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: transparent; 
+    color: #333333; 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); 
+}
+.more-button.active:hover {
+    background-color: var(--color-primary);
+    color: #333333; 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
-/* Active button hover */
-.more-button.active:hover {
-    background-color: hsl(239, 84%, 73%);
-    color: white;
+.more-text {
+    margin-right: 10px; 
+}
+
+.more-icon {
+
+    color: #666666;
 }
 
 
@@ -1475,19 +1437,6 @@ footer {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.2s ease;
 }
-.contact-box2 {
-    background-color: transparent;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border: 1px solid rgba(233, 218, 218, 0.5); /* 20% opacity for the border */
-    border-radius: 8px; /* Rounded corners */
-    width: 196px; /* Adjust the size of each contact box */
-    height: 166px;
-    text-align: left;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s ease;
-}
 
 .contact-box:hover {
     transform: scale(1.05); /* Slight scaling effect on hover */
@@ -1498,11 +1447,6 @@ footer {
     color: #6366F1; /* Customize the icon color */
     margin-bottom: 0.1rem; /* Space between icon and text */
 }
-.contact-icon2 {
-    font-size: 1.5rem; /* Make the icon larger */
-    color: #50e464; /* Customize the icon color */
-    margin-bottom: 0.1rem; /* Space between icon and text */
-}
 
 .contact-box p {
     text-align: left;
@@ -1510,20 +1454,8 @@ footer {
     color: #333;
    
 }
-.contact-box2 p {
-    text-align: left;
-    font-size: 14px !important;
-    color: #333;
-   
-}
 
 .contact-box a {
-    font-size: 14px !important;
-    font-size: 1rem;
-    color: #6366F1; /* Link color */
-    text-decoration: none !important;
-}
-.contact-box2 a {
     font-size: 14px !important;
     font-size: 1rem;
     color: #50e464; /* Link color */
@@ -1574,22 +1506,18 @@ footer {
     }
 
     /* Toggle Button Label */
-    .footer .credit,
+    .btn-toggle-switch .label,
+    footer .credit,
     #brands,
     .hero-heading-tablet,
     .description-tablet,
     .faq-content h2 {
         display: block;
     }
-    
-    .btn-toggle-switch .label{
-    display: flex ;
-    font-weight: 600;
-   }
+
     /* Header Styling */
     header .container {
         gap: 3rem;
-        
     }
 
     /* Footer Styling */
@@ -1622,15 +1550,7 @@ footer {
     #contact {
         display: none;
     }
-    body.dark-mode .btn-mobile {
-        color: #ffff;
-    }
-    body.dark-mode .btn-toggle-switch .label {
-        color: #565973;
-        font-size: 16px;
-        font-weight: 600;
-    }
-    
+
     /* Hero Section */
     .hero {
         width: 100%;
@@ -1678,67 +1598,11 @@ footer {
     }
     .store-buttons {
         display: flex;
-        flex-direction: row; /* Align buttons horizontally */
-        gap: 10px; /* Spacing between the buttons */
-        justify-content: center; /* Center the buttons */
-        align-items: center;
+        flex-direction: row;
+        width: 138px;
+        height: 43px;
     }
-    
-    .store-button {
-        display: flex;
-        height: 43px;  /* Button height */
-        width: 138px;  /* Button width */
-        align-items: center;
-        justify-content: center; /* Centers the content */
-        padding: 10px 18px;
-        border-radius: 12px; /* Rounded corners */
-        text-decoration: none;
-        background-color: #000;
-        color: white;
-        transition: background-color 0.3s, color 0.3s;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    }
-    
-    .store-button i {
-        font-size: 25px; /* Adjust icon size */
-        margin-right: 8px; /* Spacing between icon and text */
-    }
-    
-    .store-button .text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Align the text to the left */
-        line-height: 1.2;
-    }
-    
-    .store-button .text span {
-        font-size: 8px; /* Smaller text for 'Get it on' or 'Download on the' */
-        letter-spacing: 0.5px; /* Spacing for better readability */
-    }
-    
-    .store-button .text strong {
-        font-size: 11px; /* Larger bold text for 'App Store' or 'Google Play' */
-    }
-    
-    .store-button:hover {
-        opacity: 0.9; /* Slight change on hover */
-        text-decoration: none;
-    }
-    
-    /* Dark Mode Adjustments */
-    body.dark-mode .store-button {
-        background-color: #fff; /* White background for dark mode */
-        color: #000; /* Black text for dark mode */
-    }
-    
-    body.dark-mode .store-button i {
-        color: #000; /* Black icon color for dark mode */
-    }
-    
-    body.dark-mode .store-button:hover {
-        opacity: 0.8;
-    }
-    
+   
     /* Discover Button */
     .discover-container,
     .discover-button {
@@ -1746,8 +1610,7 @@ footer {
         justify-content: left;
         align-items: center;
         font-size: 16px;
-        margin-top: 1rem;
-        padding-bottom: 1rem;
+        margin-top: 10px;
     }
 
     /* Features Section */
@@ -1957,21 +1820,13 @@ footer {
     }
 
     .navbar {
-        display: flex;
-        gap: 2rem;
-        
+        display: block;
     }
- 
 
     #auth-signin {
         display: block;
     }
-    
-  .btn-toggle-switch .label {
-    display: flex;
-    font-weight: 600;
-    color: #565973;
-    }
+
 
     #brand-5, #brand-6 {
         display: flex;
@@ -2025,9 +1880,6 @@ footer {
     .store-button {
         height: 52px;
         width: 180px;
-    }
-    .discover-button {
-        margin-top: 12rem;
     }
     .carousel-container {
         position: relative;
@@ -2286,7 +2138,11 @@ footer {
         font-size: 1.2rem;
     }
 
-
+    .more-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
 
     .questions-item-content {
         display: none;
@@ -2377,7 +2233,6 @@ footer {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 18px !important;
     font-weight: 900;
     color: #0B0F19;
     font-size: 20px;
@@ -2506,12 +2361,6 @@ footer {
     margin: 0;
     
 }
-.container-index2 {
-    max-width: 1320px;
-    margin: 0 auto; /* Center the container */
-    padding: 0 1rem;
-    
-}
 
 /* Full-width background for breadcrumb wrapper */
 .breadcrumb-wrapper-index2 {
@@ -2520,6 +2369,12 @@ footer {
     padding: 0; /* Ensure no padding here */
 }
 
+.container-index2 {
+    max-width: 1320px;
+    margin: 0 auto; /* Center the container */
+    padding: 0 1rem;
+    
+}
 
 .breadcrumb-index2 {
     display: flex;

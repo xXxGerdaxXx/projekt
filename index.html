@@ -18,6 +18,7 @@
                 
                 <nav id="main-menu" class="navbar">
                     <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="index2.html">Contact</a> <!-- Add Contact link -->
                 </nav>
             
                 <div id="darkmode-toggle-switch" class="btn-toggle-switch">
@@ -327,8 +328,8 @@
             </div>
         
             <!-- Contact Box 2: Text -->
-            <div class="contact-box">
-                <div class="contact-icon">
+            <div class="contact-box2">
+                <div class="contact-icon2">
                     <i class="fas fa-comment-alt"></i> <!-- Font Awesome icon for text -->
                 </div>
                 <p>Don't like phone calls?</p>
@@ -461,24 +462,25 @@
     <script>
         // kod genererad av ai
         function toggleAnswer(button) {
-    console.log("Function is working");
-
     const questionItem = button.closest('.questions-item');
     const answerContent = questionItem.querySelector('.questions-item-content');
 
-    // Toggle the 'show-answer' class to show/hide the answer
+    // Toggle answer visibility
     if (answerContent.classList.contains('show-answer')) {
         answerContent.classList.remove('show-answer');
-        button.querySelector('i').classList.remove('fa-chevron-up');
-        button.querySelector('i').classList.add('fa-chevron-down'); // Change to down arrow
         button.classList.remove('active');
+        button.setAttribute('aria-expanded', 'false');
     } else {
         answerContent.classList.add('show-answer');
-        button.querySelector('i').classList.remove('fa-chevron-down');
-        button.querySelector('i').classList.add('fa-chevron-up'); // Change to up arrow
         button.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
     }
 }
+
+
+
+
+
 
     
         // kod genererad av ai

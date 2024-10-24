@@ -236,7 +236,7 @@ body.dark-mode .btn-toggle-switch .label {
 }
 .logo-title {
     font-weight: 900;
-    font-size: 18px; /* Adjust the font size for the title */
+    font-size: 16px; /* Adjust the font size for the title */
     color: #000; /* Change the color of the title */
   }
 
@@ -791,7 +791,7 @@ body.dark-mode .testimonials h1 {
     font-size: 18px;
     padding-bottom: 48px;
     color: #131022
-  
+
 }
 
 
@@ -818,6 +818,7 @@ body.dark-mode .testimonials h1 {
     padding: 0; 
     display: none; 
 }
+
     
 .show-answer {
     display: block; 
@@ -835,6 +836,7 @@ body.dark-mode .testimonials h1 {
 .questions-item-open {
     transform: translateY(-5px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    
 }
 
 
@@ -2280,6 +2282,7 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
     }
 
     .question-header h3 {
@@ -2359,6 +2362,9 @@ footer {
 
 
 
+
+
+
 /* Online Consultation Form */
 .header-index2 {
     width: 100%;
@@ -2377,7 +2383,6 @@ footer {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 18px !important;
     font-weight: 900;
     color: #0B0F19;
     font-size: 20px;
@@ -2506,12 +2511,6 @@ footer {
     margin: 0;
     
 }
-.container-index2 {
-    max-width: 1320px;
-    margin: 0 auto; /* Center the container */
-    padding: 0 1rem;
-    
-}
 
 /* Full-width background for breadcrumb wrapper */
 .breadcrumb-wrapper-index2 {
@@ -2520,6 +2519,12 @@ footer {
     padding: 0; /* Ensure no padding here */
 }
 
+.container-index2 {
+    max-width: 1320px;
+    margin: 0 auto; /* Center the container */
+    padding: 0 1rem;
+    
+}
 
 .breadcrumb-index2 {
     display: flex;
