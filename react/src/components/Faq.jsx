@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import vector from '../assets/images/Vector.svg';
 import vectorgreen from '../assets/images/Vectorgreen.svg';
+import '../styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneAlt, faCommentAlt, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 

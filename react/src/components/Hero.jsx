@@ -18,21 +18,21 @@ const HeroSection = () => {
 
             <div className="store-buttons">
               <a href="#" className="store-button app-store">
-                {/* Use FontAwesomeIcon component instead of class-based icons */}
-                <FontAwesomeIcon icon={faApple} size="2x" />
+                <FontAwesomeIcon icon={faApple} size="2x" style={{ marginRight: '10px' }} />
                 <span className="text">
                   <span>Download on the</span>
                   <strong>App Store</strong>
                 </span>
               </a>
               <a href="#" className="store-button google-play">
-                <FontAwesomeIcon icon={faGooglePlay} size="2x" />
+                <FontAwesomeIcon icon={faGooglePlay} size="2x" style={{ marginRight: '10px' }} />
                 <span className="text">
                   <span>Get it on</span>
                   <strong>Google Play</strong>
                 </span>
               </a>
             </div>
+
 
             <div className="discover-container">
               <button className="discover-button">

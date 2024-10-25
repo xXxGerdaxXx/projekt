@@ -15,48 +15,54 @@ function MapAndCenters() {
   return (
     <section className="map-section-index2">
       <div className="container-index2">
+        {/* Map Section */}
         <div className="map-index2">
-          <img src={mapImage} alt="Map" />
+          <img src={mapImage} alt="Map" className="map-img-index2" />
         </div>
+
+        {/* Medical Centers Info */}
         <div className="medical-centers-index2">
+          {/* Medical Center 1 */}
           <div className="medical-center-index2">
             <h3>Medical Center 1</h3>
             <p>
-              <img src={locationIcon} alt="Location icon" />
+              <img src={locationIcon} alt="Location icon" className="icon-index2" />
               4567 Washington Ave, Manchester, Kentucky 39405
             </p>
             <p>
-              <img src={phoneIcon} alt="Phone icon" />
+              <img src={phoneIcon} alt="Phone icon" className="icon-index2" />
               (406) 555-0120
             </p>
             <p>
-              <img src={clockIcon} alt="Clock icon" />
+              <img src={clockIcon} alt="Clock icon" className="icon-index2" />
               Mon – Fri: 9:00 am – 22:00 pm <br />
               Sat – Sun: 9:00 am – 20:00 pm
             </p>
           </div>
 
+          {/* Medical Center 2 */}
           <div className="medical-center-index2">
             <h3>Medical Center 2</h3>
             <p>
-              <img src={locationIcon} alt="Location icon" />
+              <img src={locationIcon} alt="Location icon" className="icon-index2" />
               2164 Royal Ln Mesa, New Jersey 45463
             </p>
             <p>
-              <img src={phoneIcon} alt="Phone icon" />
+              <img src={phoneIcon} alt="Phone icon" className="icon-index2" />
               (646) 555-0133
             </p>
             <p>
-              <img src={clockIcon} alt="Clock icon" />
+              <img src={clockIcon} alt="Clock icon" className="icon-index2" />
               Mon - Fri: 9:00 am - 22:00 pm <br />
               Sat - Sun: 9:00 am - 20:00 pm
             </p>
 
+            {/* Social Media Icons */}
             <div className="social-icons-index2">
-              <img src={facebookIcon} alt="Facebook" />
-              <img src={twitterIcon} alt="Twitter" />
-              <img src={instagramIcon} alt="Instagram" />
-              <img src={youtubeIcon} alt="YouTube" />
+              <img src={facebookIcon} alt="Facebook" className="social-icon-index2" />
+              <img src={twitterIcon} alt="Twitter" className="social-icon-index2" />
+              <img src={instagramIcon} alt="Instagram" className="social-icon-index2" />
+              <img src={youtubeIcon} alt="YouTube" className="social-icon-index2" />
             </div>
           </div>
         </div>

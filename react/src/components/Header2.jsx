@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/images/logo.svg';
-import MobileMenuButton from './MobileMenuButton'; // Import the MobileMenuButton
-import '../styles.css';
 
-const Header = () => {
+const Header2 = () => {
   // State to track dark mode (default is false)
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // State to track mobile menu visibility
 
   // On mount, check localStorage if dark mode is enabled
   useEffect(() => {
@@ -32,31 +29,26 @@ const Header = () => {
     }
   };
 
-  // Function to toggle the mobile menu
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Toggle the menu state
-  };
-
   return (
-    <header>
-      <div className="container">
+    <div className="wrapper-index2">
+      <header className="header-index2">
+        <div id="logo-index2">
         <a id="logo" href="/">
           <img src={logo} alt="Silicon Logotype" />
-          <span className="logo-title">Silicon</span> {/* Title next to logo */}
-        </a>
+          <span className="logo-title-index2">Silicon</span> {/* Title next to logo */}
+          </a>
+        </div>
 
-
-        {/* Conditionally show the navigation menu based on screen size and menu state */}
-        <nav id="main-menu" className={`navbar ${menuOpen ? 'open' : ''}`}>
-          <a className="nav-link" href="#">Features</a>
-          <a className="nav-link" href="/contact">Contact</a> {/* Add Contact */}
+        <nav id="main-menu-index2" className="navbar-index2">
+          <a className="nav-link-index2" href="#">Features</a>
+          <a className="nav-link-index2" href="#">Contact</a> {/* Add Contact */}
         </nav>
 
-        <div id="darkmode-toggle-switch" className="btn-toggle-switch">
-          <span className="label">Dark mode</span>
-          <label htmlFor="darkmode-switch" className="toggle-switch">
+        <div id="darkmode-toggle-switch-index2" className="btn-toggle-switch-index2">
+          <span className="label-index2">Dark Mode</span> {/* Capitalized "Mode" */}
+          <label htmlFor="darkmode-switch-index2" className="toggle-switch-index2">
             <input
-              id="darkmode-switch"
+              id="darkmode-switch-index2"
               type="checkbox"
               checked={isDarkMode} // Controlled input
               onChange={toggleDarkMode} // Event handler for toggling dark mode
@@ -65,15 +57,13 @@ const Header = () => {
           </label>
         </div>
 
-        {/* Mobile menu button */}
-        <MobileMenuButton onClick={toggleMenu} />
-        <a id="auth-signin" href="#" className="btn-primary">
+        <a id="auth-signin-index2" href="#" className="btn-primary-index2">
           <i className="fa-thin fa-user-large"></i>
           <span>Sign in / up</span>
         </a>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 };
 
-export default Header;
+export default Header2;

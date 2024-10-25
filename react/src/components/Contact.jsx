@@ -49,8 +49,14 @@ function Contact() {
 
             <label htmlFor="specialist-index2">Specialist</label>
             <select id="specialist-index2" name="specialist">
-              <option value="doctor1">Doctor 1</option>
-              <option value="doctor2">Doctor 2</option>
+              <option value="doctor1">Doctor: William Hartnell</option>
+              <option value="doctor2">Doctor: Patrick Troughton</option>
+              <option value="doctor2">Doctor: Jon Pertwee</option>
+              <option value="doctor2">Doctor: Tom Baker</option>
+              <option value="doctor2">Doctor: Peter Davison</option>
+              <option value="doctor2">Doctor: Colin Baker</option>
+              <option value="doctor2">Doctor: Sylvester McCoy</option>
+              <option value="doctor2">Doctor: Paul McGann</option>
             </select>
 
             <button type="submit" className="btn-primary-index2">Make an appointment</button>
