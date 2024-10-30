@@ -36,6 +36,7 @@ const Header = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen); // Toggle the menu state
   };
+  
 
   return (
     <header>
@@ -67,6 +68,7 @@ const Header = () => {
 
         {/* Mobile menu button */}
         <MobileMenuButton onClick={toggleMenu} />
+
         <a id="auth-signin" href="#" className="btn-primary">
           <i className="fa-thin fa-user-large"></i>
           <span>Sign in / up</span>

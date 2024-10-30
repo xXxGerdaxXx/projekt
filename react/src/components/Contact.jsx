@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles.css';
+import ContactForm from './ContactForm'; // Import the new ContactForm component
 
 // Import images from src folder
 import emailIcon from '../assets/images/email.svg';
@@ -12,7 +13,7 @@ function Contact() {
       <div className="contact-us-index2">
         <div className="contact-details-index2">
           <h1>Contact us</h1>
-          
+
           {/* Contact Item 1: Email Us */}
           <div className="contact-item-index2">
             <div className="contact-icon-index2">
@@ -24,7 +25,7 @@ function Contact() {
               <a href="#">Leave a message <img src={arrowIcon} alt="Arrow" /></a>
             </div>
           </div>
-          
+
           {/* Contact Item 2: Careers */}
           <div className="contact-item-index2">
             <div className="contact-icon-index2">
@@ -38,30 +39,8 @@ function Contact() {
           </div>
         </div>
 
-        <div className="consultation-form-index2">
-          <h2>Get Online Consultation</h2>
-          <form action="#">
-            <label htmlFor="fullname-index2">Full name</label>
-            <input type="text" id="fullname-index2" name="fullname" placeholder="Your full name" />
-
-            <label htmlFor="email-index2">Email address</label>
-            <input type="email" id="email-index2" name="email" placeholder="Your email address" />
-
-            <label htmlFor="specialist-index2">Specialist</label>
-            <select id="specialist-index2" name="specialist">
-              <option value="doctor1">Doctor: William Hartnell</option>
-              <option value="doctor2">Doctor: Patrick Troughton</option>
-              <option value="doctor2">Doctor: Jon Pertwee</option>
-              <option value="doctor2">Doctor: Tom Baker</option>
-              <option value="doctor2">Doctor: Peter Davison</option>
-              <option value="doctor2">Doctor: Colin Baker</option>
-              <option value="doctor2">Doctor: Sylvester McCoy</option>
-              <option value="doctor2">Doctor: Paul McGann</option>
-            </select>
-
-            <button type="submit" className="btn-primary-index2">Make an appointment</button>
-          </form>
-        </div>
+        {/* Contact Form Component */}
+        <ContactForm /> {/* Here’s where you render the new ContactForm component */}
       </div>
     </section>
   );

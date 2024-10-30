@@ -1,15 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import vector from '../assets/images/Vector.svg';
 import vectorgreen from '../assets/images/Vectorgreen.svg';
 import '../styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhoneAlt, faCommentAlt, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faPhoneAlt, faCommentAlt, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const FAQSection = () => {
-  const [openQuestion, setOpenQuestion] = useState(null);
+  const [faqs, setFaqs] = useState([]); // State for storing the FAQ data
+  const [error, setError] = useState(null); // State for storing any error
+  const [openQuestion, setOpenQuestion] = useState(null); // State for handling open/close FAQ
+
+  useEffect(() => {
+    const fetchFAQs = async () => {
+      try {
+        const res = await fetch('https://win24-assignment.azurewebsites.net/api/faq'); // API endpoint
+        if (!res.ok) {
+          throw new Error('Failed to fetch FAQs');
+        }
+        const data = await res.json();
+        console.log('Fetched FAQs:', data); // Add this to log the response data
+        setFaqs(data); // Set the FAQ data in state
+      } catch (error) {
+        setError('Failed to load FAQs. Please try again later.');
+        console.error('Error fetching FAQs:', error); // Log any errors
+      }
+    };
+  
+    fetchFAQs(); // Call the API when the component mounts
+  }, []); // Empty dependency array ensures it runs only once
+  
 
   const toggleAnswer = (index) => {
-    setOpenQuestion(openQuestion === index ? null : index); // Toggle the question state
+    setOpenQuestion(openQuestion === index ? null : index); // Toggle open/close FAQ
   };
 
   return (
@@ -43,51 +65,36 @@ const FAQSection = () => {
         </div>
       </div>
 
+      {/* Handle error case */}
+      {error ? <p>{error}</p> : null}
+
+      {/* Dynamically render the FAQ list */}
       <div className="questions-list">
-        {[
-          {
-            question: "Is any of my personal information stored in the App?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          },
-          {
-            question: "What formats can I download my transaction history in?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          },
-          {
-            question: "Can I schedule future transfers?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-          },
-          {
-            question: "When can I use Banking App services?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          },
-          {
-            question: "Can I create my own password that is easy for me to remember?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
-          },
-          {
-            question: "What happens if I forget or lose my password?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.",
-          },
-        ].map((item, index) => (
-          <div className={`questions-item ${openQuestion === index ? 'active' : ''}`} key={index}>
-            <div className="question-header">
-              <h3>{item.question}</h3>
-              <button
-                className="more-button"
-                onClick={() => toggleAnswer(index)}
-                aria-expanded={openQuestion === index ? 'true' : 'false'}
-              >
-                <FontAwesomeIcon
-                  icon={openQuestion === index ? faChevronUp : faChevronDown} // Toggle Chevron based on open state
-                />
-              </button>
+        {faqs.length > 0 ? (
+          faqs.map((faq, index) => (
+            <div key={index} className="questions-item">
+              <div className="question-header">
+                <h3>{faq.title}</h3>
+                <button
+                  className={`more-button ${openQuestion === index ? 'active' : ''}`}
+                  onClick={() => toggleAnswer(index)}
+                  aria-expanded={openQuestion === index ? 'true' : 'false'}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className={`chevron-icon ${openQuestion === index ? 'rotate' : ''}`}
+                  />
+                </button>
+              </div>
+              
+              <div className={`questions-item-content ${openQuestion === index ? 'show-answer' : ''}`}>
+                <p>{faq.content}</p>
+              </div>
             </div>
-            <div className={`questions-item-content ${openQuestion === index ? 'show-answer' : ''}`}>
-              <p>{item.answer}</p>
-            </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>Loading FAQs...</p>
+        )}
       </div>
     </div>
   );

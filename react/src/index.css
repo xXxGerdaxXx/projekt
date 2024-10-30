@@ -308,9 +308,7 @@ display: none;
 body.dark-mode .nav-link {
     color: white;
 }
-body.dark-mode .nav-link {
-    color: white;
-}
+
 .nav-link {
     color: var(--color-dark);
     font-weight: 600;
@@ -859,9 +857,10 @@ body.dark-mode .testimonials h1 {
     border-radius: 50%;
     width: 44px;
     height: 44px;
+    flex-shrink: 0; 
     font-size: 14px;
     background-color: #F3F6FF;
-    color: #666666;  /* Default icon color */
+    color: #666666;  
     cursor: pointer;
     padding: 0;
     margin: 0;
@@ -880,7 +879,7 @@ body.dark-mode .testimonials h1 {
 /* Rotate the chevron when active */
 .more-button.active i {
     transform: rotate(180deg);  /* Rotate the chevron 180 degrees */
-    color: white;  /* Turn chevron white when active */
+    color: rgb(255, 255, 255);  /* Turn chevron white when active */
     
 }
 
@@ -997,6 +996,7 @@ body.dark-mode .testimonials h1 {
     padding: 16px;
     padding-left: 40px;
     font-size: 16px;
+    color: #7a7a7a;
     border-radius: 8px 0px 0px 8px;
     border: 1px solid #7a7a7a;
     width: 300px; 
@@ -1569,9 +1569,68 @@ footer {
 }
 
 
+/*Hamburger menu styling*/
 
+@media (max-width: 1399px) {
+/* Hidden state by default */
+.navbar {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px); /* Slide up when hidden */
+  opacity: 0; /* Make it invisible */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for both opacity and sliding */
+  z-index: 1000; /* Ensure it appears on top */
+}
 
+/* When the menu is active (visible) */
+.navbar.open {
+  display: flex; /* Display when active */
+  transform: translateY(0); /* Slide down smoothly */
+  opacity: 1; /* Fade in */
+}
 
+/* Refined styles for navigation links */
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for navigation links */
+.nav-link:hover {
+  color: #ff6600; /* Change to your primary color */
+}
+
+/* Mobile Menu button styles */
+.mobile-menu-button {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001; /* Ensure button is above other content */
+}
+
+/* Styling for the hamburger icon */
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: background-color 0.3s ease;
+}
+
+  }
 
 
 @media (min-width: 768px) and (max-width: 1399px) {
@@ -2852,12 +2911,103 @@ footer {
 }
 
 .dark-mode .social-icons-index2 img:hover {
-    transform: scale(1.1); /* Slight hover effect */
+    transform: scale(1.1); 
 }
 /* Dark mode styles for full-width-wrapper-index2 */
 body.dark-mode .full-width-wrapper-index2 {
-    background-color: #1f1f1f; /* Dark background for the full-width section */
-    color: #ffffff; /* Light text in dark mode */
+    background-color: #1f1f1f; 
+    color: #ffffff; 
 }
 
 
+
+/* Styling for consultation form appointment message */
+.informationbox {
+    background-color: #f9f9f9; 
+    border: 2px solid #4CAF50; 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  .informationbox h1 {
+    font-size: 24px;
+    color: #4CAF50; 
+    margin-bottom: 15px;
+  }
+  
+  .informationbox p {
+    font-size: 16px;
+    color: #333; 
+    margin-bottom: 25px;
+  }
+  
+  .btn-green {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-green:hover {
+    background-color: #45a049; 
+  }
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .modal-success {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+  }
+  
+  .modal-error {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+  }
+  
+  .modal-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .modal-content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,65 +1,69 @@
-import React from 'react';
-import quotesIcon from '../assets/images/quotes.svg'; // Adjust the path based on your project structure
-import starIcon from '../assets/images/star.svg'; // Adjust the path
-import emptyStarIcon from '../assets/images/empty-star.svg'; // Adjust the path
-import avatar1 from '../assets/images/avatar1.svg'; // Adjust the path
-import avatar2 from '../assets/images/avatar2.svg'; // Adjust the path
+import React, { useState, useEffect } from 'react';
+import quotesIcon from '../assets/images/quotes.svg'; 
+import starIcon from '../assets/images/star.svg';
+import emptyStarIcon from '../assets/images/empty-star.svg'; 
+import '../styles.css';
 
 const TestimonialsSection = () => {
+  const [testimonials, setTestimonials] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const res = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials');
+        if (!res.ok) {
+          throw new Error('Failed to fetch testimonials');
+        }
+        const data = await res.json();
+        
+        // Add the console.log here to check the fetched data
+        console.log('Fetched Testimonials:', data);
+        
+        setTestimonials(data);  // Update state with the fetched testimonials
+      } catch (error) {
+        setError('Failed to load testimonials. Please try again later.');
+        console.error('Error fetching testimonials:', error);  // Log any errors that occur
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
   return (
     <section className="hero4">
       <div className="testimonials">
         <h1>Clients are Loving Our App</h1>
+        {error ? <p>{error}</p> : null}
         <div className="testimonial-cards">
-          {/* First Testimonial */}
-          <div className="testimonial-card">
-            <div className="testimonial-header">
-              <img src={quotesIcon} alt="Quote Icon" className="quote-icon" />
-              <div className="stars">
-                <img src={starIcon} alt="Star" />
-                <img src={starIcon} alt="Star" />
-                <img src={starIcon} alt="Star" />
-                <img src={starIcon} alt="Star" />
-                <img src={emptyStarIcon} alt="Four out of five star rating." />
+          {testimonials.length > 0 ? (
+            testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card">
+                <div className="testimonial-header">
+                  <img src={quotesIcon} alt="Quote Icon" className="quote-icon" />
+                  <div className="stars">
+                    {Array.from({ length: 5 }).map((_, starIndex) => (
+                      starIndex < testimonial.starRating ? (
+                        <img key={starIndex} src={starIcon} alt="Star" />
+                      ) : (
+                        <img key={starIndex} src={emptyStarIcon} alt="Empty Star" />
+                      )
+                    ))}
+                  </div>
+                </div>
+                <p>{testimonial.comment}</p>
+                <div className="testimonial-footer">
+                  <img src={testimonial.avatarUrl || 'https://example.com/default-avatar.jpg'} alt={`${testimonial.author}'s avatar`} className="avatar" />
+                  <div>
+                    <h4>{testimonial.author}</h4>
+                    <p>{testimonial.jobRole}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <p>
-              Sit pretium aliquam tempor, orci dolor sed maecenas rutrum sagittis. Laoreet posuere rhoncus, egestas
-              lacus, egestas justo aliquam vel. Nisi vitae lectus hac hendrerit. Montes justo turpis sit amet.
-            </p>
-            <div className="testimonial-footer">
-              <img src={avatar1} alt="Fannie Summers" className="avatar" />
-              <div>
-                <h4>Fannie Summers</h4>
-                <p>Designer</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Second Testimonial */}
-          <div className="testimonial-card">
-            <div className="testimonial-header">
-              <img src={quotesIcon} alt="Quote Icon" className="quote-icon" />
-              <div className="stars">
-                <img src={starIcon} alt="Star" />
-                <img src={starIcon} alt="Star" />
-                <img src={starIcon} alt="Star" />
-                <img src={starIcon} alt="Star" />
-                <img src={starIcon} alt="Star" />
-              </div>
-            </div>
-            <p>
-              Nunc senectus leo vel venenatis accumsan vestibulum sollicitudin amet porttitor. Nisl bibendum nulla
-              tincidunt eu enim ornare dictumst sit amet. Dictum pretium dolor tincidunt egestas eget nunc.
-            </p>
-            <div className="testimonial-footer">
-              <img src={avatar2} alt="Albert Flores" className="avatar" />
-              <div>
-                <h4>Albert Flores</h4>
-                <p>Developer</p>
-              </div>
-            </div>
-          </div>
+            ))
+          ) : (
+            <p>Loading testimonials...</p>
+          )}
         </div>
       </div>
     </section>
